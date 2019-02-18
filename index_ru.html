@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Оплата заказа</title>
+    <!-- css -->
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/mobile.css" rel="stylesheet" type="text/css" media="only screen and (max-device-width:610px)">
+    
+    <!-- js -->    
+    <script type="text/javascript" src="js/modernizr.min.js" ></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.groupinputs.min.js"></script>
+    <script type="text/javascript" src="js/lib.js"></script>
+  </head>
+  <body>
+    <div class="wrapper"><!--wrapper-->
+      <div class="header"> <!--head-->
+        <a href="http://superludi.com" target="_blank"><img src="img/sup_logo.png" alt="Логотип" class="logo"></a>
+        <div class="lang">
+          <a href="index_ru.html" id="ru" title="Русский" class="active">RU</a>
+          <a href="index_en.html" id="en" title="English">EN</a>
+          <a href="index_ua.html" id="ua" title="Українська">UA</a>
+        </div>  
+        <div class="lang-dropdown">
+          <span class="t">RU</span>
+          <div class="lang-dropdown-content">
+            <a href="index_en.html" title="English"><span class="t">EN</span></a><br>
+            <a href="index_ua.html" title="Українська"><span class="t">UK</span></a>
+          </div>
+        </div>
+      </div><!--end head-->
+      <div class="content"><!--content-->
+        <div class="p_page"><!--p_page-->
+          <h1>Оплата заказа</h1>
+          <div class="info"><!--info-->
+            <div class="line">
+              <span class="name">Компания</span>
+              <span class="value" style="font-weight: 600;">Суперлюди</span>
+            </div>
+            <div class="line">
+              <span class="name">Номер заказа</span>
+              <span class="value">00125</span>
+            </div>
+            <div class="line" style="padding-bottom:10px">
+              <span class="name">Описание</span>
+              <span class="value">Оплата товара согласно договору №1234567890. С гарантией действующей на протяжении всего срока эксплуатации.</span>
+            </div>
+            <div class="line">
+              <span class="name" style="padding-top:3px">Сумма</span>
+              <span class="price" style="font-weight: 600;">454.00 грн.</span>
+            </div>
+          </div><!--end info-->
+          <div class="push" style="height:15px"></div>
+          <div class="spin"></div>
+          <div class="card"><!--card-->
+            <form action="#" name="formnumber" id="form">
+              <span class="infocard">Введите реквизиты платежной карты (номер и срок действия) </span>
+              <div class="card_top"><!--card_top-->
+                <span class="nc">Номер карты</span>
+                <div class="numbercard"><!---num card-->
+                  <input type="tel" value="" id="cardNumber" autocomplete="off" maxlength="4" class="NumGroup"  pattern="[0-9]*" onkeyup="if(this.value.length >= 4){document.getElementById('cardNumber2').focus();}"/>
+                  <input type="tel" value="" id="cardNumber2" autocomplete="off" maxlength="4" class="NumGroup"  pattern="[0-9]*" onkeyup="if(this.value.length >= 4){document.getElementById('cardNumber3').focus();}"/>
+                  <input type="tel" value="" id="cardNumber3" autocomplete="off" maxlength="4" class="NumGroup"  pattern="[0-9]*" onkeyup="if(this.value.length >= 4){document.getElementById('cardNumber4').focus();}"/>
+                  <input type="tel" value="" id="cardNumber4" autocomplete="off" maxlength="4" class="NumGroup"  pattern="[0-9]*" onkeyup="if(this.value.length >= 4){document.getElementById('cardExpirationMonth').focus();}"/>
+                </div><!---end num card-->
+                <span class="ed">Срок действия</span>
+                <div class="datecard" ><!--expiration date-->
+                  <select id="cardExpirationMonth" onchange="if(this.value.length >= 2){document.getElementById('cardExpirationYear').focus();}">
+                    <option disabled selected data-size="7" class="placeholder">ММ</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <select id="cardExpirationYear" onchange="if(this.value.length >= 4){document.getElementById('cvv').focus();}">
+                    <option disabled selected data-size="7" class="placeholder">ГГГГ</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                  </select>
+                </div><!--end expiration date-->
+                <div class="logo_mps"><!--logo mps-->
+                  <img id="visa" src="img/visa.png">
+                  <img id="mc" src="img/mastercard.png">
+                  <img id="v_sc" src="img/VBV.png">
+                  <img id="mc_sc" src="img/MCSC.png">
+                </div><!--end logo mps-->
+              </div><!--end card_top-->
+              <div class="card_bg"><!--card_bg-->
+                <div class="line_card_bg"></div>
+                <a class="help" onmouseout="closeCard();" onmouseover="openCard(event);" style="vertical-align:bottom; cursor:pointer;"><img src="img/info.svg"></a>
+                <div class="cod">
+                  <span> CVV-код:</span>
+                  <input type="password" maxlength="3" id="cvv"  class="pacvord" onkeyup="if(this.value.length >= 3){document.getElementById('button').focus();}" />
+                </div>
+              </div><!--end card_bg-->
+              <div class="buttonorig">
+                <a href="" onClick=" document.getElementById('form').submit();" id="button">Оплатить</a>
+              </div>
+            </form>
+          </div><!--end card-->
+        </div><!--p_page-->
+      </div><!--end content-->
+    </div><!--end wrapper-->
+    <div id="help_card">
+      <h3>Как найти CVV / CVC по кредитной карте</h3><br>
+      <p >CVV / CVC код используется для подтверждения того, что во время транзакции была использована подлинная кредитная карта. Данная процедура стала обязательной для он-лайн транзакций с 1 января 2003г.</p> 
+      <p >В случае с VISA и Master Card, данный код представляет собой Код Безопасности, состоящий из трёх цифр, нанесенных на тыльной стороне карты.</p>
+      <br>
+      <div style="text-align: center;"><img src="img/help_card.png" width="165" height="103" /></div>
+    </div>
+    <script>
+      $(function(){
+        $('.NumGroup').keypress(function(eve) {
+          if ((eve.which != 46 || $(this).val().indexOf('') != -1) && (eve.which < 48 || eve.which > 57) || (eve.which == 46 && $(this).caret().start == 0) ) {
+            eve.preventDefault();
+          } 
+        });
+      });
+      $(function(){
+        $('.pacvord').keypress(function(eve) {
+          if ((eve.which != 46 || $(this).val().indexOf('') != -1) && (eve.which < 48 || eve.which > 57) || (eve.which == 46 && $(this).caret().start == 0) ) {
+            eve.preventDefault();
+          } 
+        });
+      });
+    </script>
+    <script>
+      $('.NumGroup').groupinputs();
+    </script>
+  </body>
+</html>
